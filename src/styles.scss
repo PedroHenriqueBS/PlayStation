@@ -2,3 +2,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  // DEAFAULTS
+  --white: #fff;
+  --black: #000;
+  // BUTTONS
+  --btn-blue: #0070cc;
+  --btn-blue-hover: #0064B7;
+  --btn-white: #fff;
+  --btn-white-hover: #E5E5E5;
+  --btn-orange: #D53B00;
+  --btn-orange-hover: #C03500;
+}
+
