@@ -1,2 +1,41 @@
+<div class="flex justify-end bg-black">
+  <img [ngSrc]="logoSony" [alt]="logoAltSony" class="h-3.5 m-3" width="80" height="50">
+</div>
+
+<div class="flex relative justify-between px-5 py-2">
+  <div class="flex">
+    <img src="assets/logos/logoPlay.webp" width="50" class="mr-3">
+    <ul class="flex justify-center">
+      @for(item of menuDrowDown; track item){
+        <li class="flex justify-center items-center w-auto p-2 cursor-pointer text-black mr-7 " (click)="activeMenu(item)">
+          {{item.nome}}
+          <span class="arrow" [class.rotate]="item.isOpen"><img src="assets/arrow-down.png" alt="oi" width="20"></span>
+
+          @if(item.enable){
+            <ul class="flex absolute top-16 w-full pt-4 left-0 items-center justify-center border-t-2">
+            @for (item of item.description; track item) {
+              <div class="flex items-center gap-2">
+                @if(item == ''){
+                  <span class="block w-0 h-0 rounded-full bg-btnBlue"></span>
+                } @else {
+                    <span class="block w-2 h-2 rounded-full bg-btnBlue"></span>
+                }
+                <li class="text-black mr-5"> {{ item }} </li>
+              </div>
+            }
+            </ul>
+              }
+        </li>
+      }
+    </ul>
+  </div>
+  <div class="flex items-center justify-center gap-4">
+    <button class="bg-btnBlue text-white hover:bg-btnBlueHover rounded-3xl px-3 font-semibold tracking-wider">Iniciar sessão</button>
+    <div class="flex border p-2 hover:border-black">
+      <input type="text" class="outline-0 w-32 cursor-pointer placeholder:text-gray-700 " placeholder="Pesquisar">
+      <img src="assets/lupa.png" width="24">
+    </div>
+  </div>
+</div>
 
 
