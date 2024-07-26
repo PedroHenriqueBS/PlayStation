@@ -18,65 +18,77 @@ export class HeaderComponent {
   public menuDrowDown: Categorias[] = [
     {
       id: 1,
-      enable: false,
-      nome: 'Jogos',
+      img: ['assets/icons-header/play5.webp', 'assets/icons-header/play4.webp', 'assets/icons-header/vr.webp', 'assets/icons-header/pc.webp', 'assets/icons-header/Plus.webp'],
+      nameImg: ['PS5', 'PS4', 'PS VR2', 'PC', 'PS Plus'],
+      name: 'Jogos',
       description: ['Explorar por Gênero', 'PlayStation Indies', 'Grátis para Jogar', 'Ofertas e promoções'],
-      isOpen: false,
     },
     {
       id: 2,
-      enable: false,
-      nome: 'PS5',
+      img: ['assets/icons-header/play5.webp', 'assets/icons-header/jogos.webp', 'assets/icons-header/controle.webp', 'assets/icons-header/vr.webp', 'assets/icons-header/audio.webp'],
+      nameImg: ['Console', 'Jogos', 'Controles', 'PS VR2', 'Áudio'],
+      name: 'PS5',
       description: [''],
-      isOpen: false,
     },
     {
       id: 3,
-      enable: false,
-      nome: 'PS4',
+      img: ['assets/icons-header/play4.webp', 'assets/icons-header/jogos.webp', 'assets/icons-header/controle.webp', 'assets/icons-header/audio.webp'],
+      nameImg: ['Console', 'Jogos', 'Controles', 'Headsets'],
+      name: 'PS4',
       description: [''],
-      isOpen: false,
     },
     {
       id: 4,
-      enable: false,
-      nome: 'Serviços',
+      img: ['assets/icons-header/Plus.webp', 'assets/icons-header/star.webp'],
+      nameImg: ['PS Plus', 'PS Stars'],
+      name: 'Serviços',
       description: ['Entretenimento no PS5', 'Entretenimento no PS4'],
-      isOpen: false,
     },
     {
       id: 5,
-      enable: false,
-      nome: 'Acessórios',
+      img: ['assets/icons-header/controle.webp', 'assets/icons-header/remoto.webp', 'assets/icons-header/vr.webp', 'assets/icons-header/audio.webp', 'assets/icons-header/all.webp'],
+      nameImg: ['Controles de PS5', 'Reprodutor remoto', 'PS VR2', 'Áudio', 'Todos os acessórios'],
+      name: 'Acessórios',
       description: ['Controle DualSense', 'Controle DualSense Edge', 'PULSE Elite', 'PULSE Explore'],
-      isOpen: false,
     },
     {
-      id: 5,
-      enable: false,
-      nome: 'Notícias',
+      id: 6,
+      img: ['assets/icons-header/blog.webp', 'assets/icons-header/date.webp'],
+      nameImg: ['PS Blog', 'Mês Playstation'],
+      name: 'Notícias',
       description: ['Central de competições', 'Acessibilidade', 'Privacidade e segurança'],
-      isOpen: false,
     },
     {
       id: 7,
-      enable: false,
-      nome: 'Loja',
+      img: ['assets/icons-header/store.webp', 'assets/icons-header/Plus.webp'],
+      nameImg: ['Comprar jogos', 'Assinar o PS Plus'],
+      name: 'Loja',
       description: ['Novos Lançamentos', 'Descontos mais recentes', 'Coleções', 'Comprar um vale-presente', 'Assinar o PS Plus'],
-      isOpen: false,
     },
     {
       id: 8,
-      enable: false,
-      nome: 'Suporte',
+      img: ['assets/icons-header/support.webp', 'assets/icons-header/status.webp'],
+      nameImg: ['Suporte', 'Status da PSN'],
+      name: 'Suporte',
       description: ['Conta', 'Loja', 'Serviços em camadas', 'Jogos', 'Hardware', 'Segurança online'],
-      isOpen: false,
     },
   ];
+  public openObjectId: number | null = null;
+  public activeButton: number | null = null;
 
-  activeMenu(item: Categorias) {
-    item.isOpen = !item.isOpen;
-    item.enable = !item.enable;
+  activeMenu(item: number) {
+    if(this.openObjectId === item) {
+      this.openObjectId = null
+    } else {
+      this.openObjectId = item;
+    }
+  }
+
+  toggleRotate(item: number): void {
+    this.activeButton = this.activeButton === item ? null : item;
+  }
+
+  isActive(item: number): boolean {
+    return this.activeButton === item;
   }
 }
-

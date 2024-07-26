@@ -2,33 +2,49 @@
   <img [ngSrc]="logoSony" [alt]="logoAltSony" class="h-3.5 m-3" width="80" height="50">
 </div>
 
-<div class="flex relative justify-between px-5 py-2">
+<div class="flex relative justify-between px-5 py-2 bg-white">
   <div class="flex">
     <img src="assets/logos/logoPlay.webp" width="50" class="mr-3">
     <ul class="flex justify-center">
       @for(item of menuDrowDown; track item){
-        <li class="flex justify-center items-center w-auto p-2 cursor-pointer text-black mr-7 " (click)="activeMenu(item)">
-          {{item.nome}}
-          <span class="arrow" [class.rotate]="item.isOpen"><img src="assets/arrow-down.png" alt="oi" width="20"></span>
+        <li class="flex justify-center items-center w-auto p-2 cursor-pointer text-black mr-5" (click)="activeMenu(item.id)" (click)="toggleRotate(item.id)">
+          <span class="hover:text-btnBlueHover">{{item.name}}</span>
+          <span class="arrow" [ngClass]="{'rotate': isActive(item.id)}"><img src="assets/arrow-down.png" alt="oi" width="20" id="flecha"></span>
 
-          @if(item.enable){
-            <ul class="flex absolute top-16 w-full pt-4 left-0 items-center justify-center border-t-2">
-            @for (item of item.description; track item) {
-              <div class="flex items-center gap-2">
-                @if(item == ''){
-                  <span class="block w-0 h-0 rounded-full bg-btnBlue"></span>
-                } @else {
-                    <span class="block w-2 h-2 rounded-full bg-btnBlue"></span>
-                }
-                <li class="text-black mr-5"> {{ item }} </li>
+          @if(item.id === openObjectId){
+            <div class="flex absolute top-16 w-full pt-4 left-0 items-center justify-center flex-col bg-white pb-4">
+                <div class="flex">
+                  @for(item of item.img; track item){
+                    <div class="hover:shadow-boxHeader px-12 pt-2 pb-14 flex mr-5">
+                      <img [src]="item" class="" width="70">
+                    </div>
+                  }
+                </div>
+                  <div class="flex">
+                    @for(item of item.nameImg; track item){
+                      <div class="px-12 flex">
+                        <span class="flex w-widthHeader items-center justify-center relative -top-12 font-semibold mr-5 text-center text-sm"> {{item}}</span>
+                      </div>
+                    }
+                  </div>
+              <div class="flex items-center gap-2 border-t-2 w-full justify-center pt-3">
+                @for (item of item.description; track item) {
+                  @if(item == ''){
+                    <span></span>
+                  } @else {
+                      <span class="block w-2 h-2 rounded-full bg-btnBlue"></span>
+                      <span class="text-black mr-5 hover:text-btnBlueHover"> {{ item }} </span>
+                    }
+                  }
               </div>
-            }
-            </ul>
-              }
+            </div>
+          }
         </li>
       }
     </ul>
   </div>
+
+  <!-- SESSÃO DE LOGIN E PESQUISA-->
   <div class="flex items-center justify-center gap-4">
     <button class="bg-btnBlue text-white hover:bg-btnBlueHover rounded-3xl px-3 font-semibold tracking-wider">Iniciar sessão</button>
     <div class="flex border p-2 hover:border-black">

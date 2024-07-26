@@ -14,7 +14,13 @@ module.exports = {
         btnWhiteHover: "var(--btn-white-hover)",
         btnOrange: "var(--btn-orange)",
         btnOrangeHover: "var(--btn-orange-hover)",
-      }
+      },
+      boxShadow: {
+        boxHeader: '2px 2px 5px gray',
+      },
+      spacing: {
+        widthHeader: '70px',
+      },
     },
   },
   plugins: [],

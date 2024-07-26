@@ -1,5 +1,6 @@
 .arrow { transition: transform 0.3s ease; }
-.arrow.rotate { transform: rotate(180deg); }
+.rotate { transform: rotate(180deg); transition: transform 0.3s ease; }
+
 
 
 

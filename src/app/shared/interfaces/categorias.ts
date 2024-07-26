@@ -1,8 +1,8 @@
 export interface Categorias {
   id: number;
-  enable: boolean;
-  nome: string;
+  img: Array<string>;
+  nameImg: Array<string>;
+  name: string;
   description: Array<string>;
-  isOpen: boolean;
 }
 
