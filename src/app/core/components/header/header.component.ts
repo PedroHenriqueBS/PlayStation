@@ -14,7 +14,6 @@ export class HeaderComponent {
   public logoSony: string = 'assets/logos/logoSony.webp';
   public logoAltSony: string = 'Logo da marca sony';
 
-  control = false;
   public menuDrowDown: Categorias[] = [
     {
       id: 1,
@@ -73,6 +72,7 @@ export class HeaderComponent {
       description: ['Conta', 'Loja', 'Serviços em camadas', 'Jogos', 'Hardware', 'Segurança online'],
     },
   ];
+  
   public openObjectId: number | null = null;
   public activeButton: number | null = null;
 

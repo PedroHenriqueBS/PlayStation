@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-btn-white',
+  selector: 'btn-white',
   standalone: true,
   imports: [],
   templateUrl: './btn-white.component.html',

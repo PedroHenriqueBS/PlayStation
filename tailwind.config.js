@@ -20,6 +20,7 @@ module.exports = {
       },
       spacing: {
         widthHeader: '70px',
+        heightSlide: '500px'
       },
     },
   },
