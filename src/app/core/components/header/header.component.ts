@@ -72,7 +72,7 @@ export class HeaderComponent {
       description: ['Conta', 'Loja', 'Serviços em camadas', 'Jogos', 'Hardware', 'Segurança online'],
     },
   ];
-  
+
   public openObjectId: number | null = null;
   public activeButton: number | null = null;
 
