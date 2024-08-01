@@ -5,12 +5,13 @@ import { SwiperOptions } from 'swiper/types';
 import { SwiperContainer } from 'swiper/element';
 import { BtnWhiteComponent } from "../../core/components/buttons/btn-white/btn-white.component";
 import { SlideSwiper } from '../../shared/interfaces/slideSwiper';
+import { AccessoriesComponent } from '../../core/components/accessories/accessories.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, BtnWhiteComponent],
+  imports: [HeaderComponent, BtnWhiteComponent, AccessoriesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA,],
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit{
       parallax: true,
       speed: 1500,
       autoplay: {
-        delay: 4000,
+        delay: 4500,
       },
       effect: 'fade',
     };
@@ -92,7 +93,7 @@ export class HomeComponent implements OnInit{
       subTitle: 'Aproveite essas ofertas de promoção de inverno agora mesmo na PlayStore',
       button: 'Navegar pelos jogos',
     },
-  ]
+  ];
 
   ngOnInit(): void {
       this.configSwiper();

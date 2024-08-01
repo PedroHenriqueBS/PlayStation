@@ -19,14 +19,19 @@
 </swiper-container>
 
 <!-- SLIDE CONTETNT 2 THUMB-->
-<swiper-container init="false" class="swiper2" space-between="10">
+<swiper-container init="false" class="swiper2 max-w-screen-2xl" space-between="10">
   @for(item of slideSwiper; track item) {
     <swiper-slide class="h-full">
       <img [src]="item.imgMiniatura" class="object-cover ">
     </swiper-slide> }
 </swiper-container>
 
+<!-- SLIDE ACCESSORIES -->
+<app-accessories />
+
 <br>
 <br>
 <br>
+
+
 
