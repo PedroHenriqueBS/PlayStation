@@ -6,12 +6,14 @@ import { SwiperContainer } from 'swiper/element';
 import { BtnWhiteComponent } from "../../core/components/buttons/btn-white/btn-white.component";
 import { SlideSwiper } from '../../shared/interfaces/slideSwiper';
 import { AccessoriesComponent } from '../../core/components/accessories/accessories.component';
+import { gamesList } from '../../shared/interfaces/games';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, BtnWhiteComponent, AccessoriesComponent],
+  imports: [CommonModule, HeaderComponent, BtnWhiteComponent, AccessoriesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA,],
@@ -99,4 +101,80 @@ export class HomeComponent implements OnInit{
       this.configSwiper();
       this.configSwiper2();
   }
+
+  // ARRAY GAMES LIST
+  public buttonOpen: boolean | null = null;
+
+  public gamesList: gamesList[] = [
+    {
+    img: 'assets/games-list/callof.jpg',
+    name: 'Call of Duty: Modern Warfare III',
+    },
+    {
+    img: 'assets/games-list/fifa.png',
+    name: 'EA SPORTS FC™ 25',
+    },
+    {
+    img: 'assets/games-list/game-battle.jpg',
+    name: 'Battlefield V',
+    },
+    {
+    img: 'assets/games-list/game-creed.jpg',
+    name: "Assassin's Creed",
+    },
+    {
+    img: 'assets/games-list/game-horizon.webp',
+    name: 'Horizon Adventures',
+    },
+    {
+    img: 'assets/games-list/game-ragnarok.webp',
+    name: 'God of War Ragnarök',
+    },
+    {
+    img: 'assets/games-list/game-thelast.webp',
+    name: 'The Last of Us Part: I',
+    },
+    {
+    img: 'assets/games-list/spider.webp',
+    name: "Marvel's Spider-Man 2",
+    },
+    {
+    img: 'assets/games-list/fortinite.jpg',
+    name: 'Fortinite',
+    },
+    {
+    img: 'assets/games-list/sonic.webp',
+    name: 'Sonic Frontiers',
+    },
+    {
+    img: 'assets/games-list/fifa.png',
+    name: 'EA SPORTS FC™ 25',
+    },
+    {
+    img: 'assets/games-list/sonic.webp',
+    name: 'Sonic Frontiers',
+    },
+]
+
+  // BUTTON
+  isOpen(id: number): void{
+    const btn = document.querySelector('#btn');
+    const btn2 = document.querySelector('#btn2');
+
+    if(id == 1){
+      this.buttonOpen = null;
+      btn?.classList.add('active');
+      btn?.classList.remove('disable');
+      btn2?.classList.add('disable');
+    }
+
+    if(id == 2) {
+      this.buttonOpen = null;
+      btn2?.classList.add('active');
+      btn2?.classList.remove('disable');
+      btn?.classList.add('disable');
+    }
+  }
+
+
 }

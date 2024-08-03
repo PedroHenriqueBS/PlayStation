@@ -27,11 +27,43 @@
 </swiper-container>
 
 <!-- SLIDE ACCESSORIES -->
-<app-accessories />
+ @defer(on viewport){
+   <app-accessories />
+ } @placeholder {
+    <p>Loading...</p>
+ } @loading {
+    <p>Loading...</p>
+ } @error {
+    <p>Error!</p>
+ }
 
-<br>
-<br>
-<br>
+ <!-- GAMES LIST-->
+<section class="bg-bgGames w-full py-12 mt-10">
+  <div class="max-w-screen-2xl m-auto">
+    <!-- Header Games-->
+    <div class="text-white flex flex-col items-center gap-8 mb-10">
+      <h1 class="text-4xl">Jogos incríveis de PS4 e PS5 já disponíveis ou chegando em breve</h1>
+      <!-- Buttons -->
+      <div class="flex bg-bgButton rounded-3xl hover:shadow-2xl">
+        <button (click)="isOpen(1)">
+          <div class="button active" id="btn">Novos lançamentos</div>
+        </button>
+        <button (click)="isOpen(2)">
+          <div class="button disable" id="btn2">Em breve</div>
+        </button>
+      </div>
+    </div>
+    <!-- Games -->
+    <div class="grid grid-cols-6 grid-rows-2 gap-y-10 gap-x-5 games mx-4">
+    @for(item of gamesList; track item){
+        <div class="w-full h-60 cursor-pointer gamesBox">
+          <img [src]="item.img" class="object-cover object-top w-full h-full rounded-xl img">
+          <p class="text-white pt-2"> {{ item.name }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
 
 
 

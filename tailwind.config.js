@@ -14,6 +14,9 @@ module.exports = {
         btnWhiteHover: "var(--btn-white-hover)",
         btnOrange: "var(--btn-orange)",
         btnOrangeHover: "var(--btn-orange-hover)",
+        // GAMES LIST
+        bgGames: "var(--bg-games)",
+        bgButton: "var(--bg-button)",
       },
       boxShadow: {
         boxHeader: '2px 2px 5px gray',
@@ -21,7 +24,8 @@ module.exports = {
       spacing: {
         widthHeader: '70px',
         heightSlide: '500px',
-        widthAccessories: '500px'
+        widthAccessories: '500px',
+        widtContainerSwiper: '1850px'
       },
     },
   },
