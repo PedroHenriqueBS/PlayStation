@@ -9,7 +9,6 @@ import { AccessoriesComponent } from '../../core/components/accessories/accessor
 import { gamesList } from '../../shared/interfaces/games';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -109,59 +108,86 @@ export class HomeComponent implements OnInit{
     {
     img: 'assets/games-list/callof.jpg',
     name: 'Call of Duty: Modern Warfare III',
+    imgEmbreve: 'assets/games-list/fortinite.jpg',
+    nameEmbreve: 'Fortinite',
     },
     {
     img: 'assets/games-list/fifa.png',
     name: 'EA SPORTS FC™ 25',
+    imgEmbreve: 'assets/games-list/game-horizon.webp',
+    nameEmbreve: 'Horizon Adventures',
     },
     {
     img: 'assets/games-list/game-battle.jpg',
     name: 'Battlefield V',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/game-creed.jpg',
     name: "Assassin's Creed",
+    imgEmbreve: 'assets/games-list/callof.jpg',
+    nameEmbreve: 'Call of Duty: Modern Warfare III',
     },
     {
     img: 'assets/games-list/game-horizon.webp',
     name: 'Horizon Adventures',
+    imgEmbreve: 'assets/games-list/spider.webp',
+    nameEmbreve: "Marvel's Spider-Man 2",
     },
     {
     img: 'assets/games-list/game-ragnarok.webp',
     name: 'God of War Ragnarök',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/game-thelast.webp',
     name: 'The Last of Us Part: I',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/spider.webp',
     name: "Marvel's Spider-Man 2",
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/fortinite.jpg',
     name: 'Fortinite',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/sonic.webp',
     name: 'Sonic Frontiers',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/fifa.png',
     name: 'EA SPORTS FC™ 25',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
     img: 'assets/games-list/sonic.webp',
     name: 'Sonic Frontiers',
+    imgEmbreve: 'assets/games-list/fifa.png',
+    nameEmbreve: 'EA SPORTS FC™ 25',
     },
 ]
 
   // BUTTON
+  public button: number = 1;
+
   isOpen(id: number): void{
     const btn = document.querySelector('#btn');
     const btn2 = document.querySelector('#btn2');
 
     if(id == 1){
+      this.button = 1;
       this.buttonOpen = null;
       btn?.classList.add('active');
       btn?.classList.remove('disable');
@@ -169,6 +195,7 @@ export class HomeComponent implements OnInit{
     }
 
     if(id == 2) {
+      this.button = 2;
       this.buttonOpen = null;
       btn2?.classList.add('active');
       btn2?.classList.remove('disable');

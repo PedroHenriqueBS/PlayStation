@@ -9,7 +9,7 @@
     <img src="assets/logos/logoPlay.webp" width="50" class="mr-3">
     <ul class="flex justify-center z-50">
       @for(item of menuDrowDown; track item){
-        <li class="flex justify-center items-center w-auto p-2 cursor-pointer text-black mr-5 duration-1000"  (click)="activeMenu(item.id)" (click)="toggleRotate(item.id)">
+        <li class="flex justify-center items-center w-auto p-2 cursor-pointer text-black mr-3 duration-1000"  (click)="activeMenu(item.id)" (click)="toggleRotate(item.id)">
           <span class="hover:text-btnBlueHover">{{item.name}}</span>
           <span class="arrow" [ngClass]="{'rotate': isActive(item.id)}"><img src="assets/arrow-down.png" alt="oi" width="20" id="flecha"></span>
 

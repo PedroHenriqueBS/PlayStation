@@ -83,7 +83,7 @@ export class AccessoriesComponent implements OnInit{
           .swiper-pagination-bullet {
             border-radius: 5px;
             width: 15px;
-            height: 3px;
+            height: 2px;
           }
 
           .swiper-pagination-bullet-active {

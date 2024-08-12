@@ -19,7 +19,7 @@
 </swiper-container>
 
 <!-- SLIDE CONTETNT 2 THUMB-->
-<swiper-container init="false" class="swiper2 max-w-screen-2xl" space-between="10">
+<swiper-container init="false" class="swiper2 max-w-screen-xl" space-between="10">
   @for(item of slideSwiper; track item) {
     <swiper-slide class="h-full">
       <img [src]="item.imgMiniatura" class="object-cover ">
@@ -53,14 +53,25 @@
         </button>
       </div>
     </div>
-    <!-- Games -->
-    <div class="grid grid-cols-6 grid-rows-2 gap-y-10 gap-x-5 games mx-4">
-    @for(item of gamesList; track item){
-        <div class="w-full h-60 cursor-pointer gamesBox">
-          <img [src]="item.img" class="object-cover object-top w-full h-full rounded-xl img">
-          <p class="text-white pt-2"> {{ item.name }}</p>
-        </div>
-      }
+    <!-- GAMES -->
+    <div class="grid grid-cols-6 grid-rows-2 gap-y-14 gap-x-5 games mx-4">
+      <!-- NOVOS LANÇAMENTOS -->
+      @if(button == 1) {
+        @for(item of gamesList; track item){
+            <div class="w-full h-60 cursor-pointer gamesBox">
+              <img [src]="item.img" class="object-cover object-top w-full h-full rounded-xl img">
+              <p class="text-white pt-2 text-sm"> {{ item.name }}</p>
+            </div>
+          }
+        <!-- EM BREVE-->
+      } @else if (button == 2) {
+        @for(item of gamesList; track item){
+          <div class="w-full h-60 cursor-pointer gamesBox">
+            <img [src]="item.imgEmbreve" class="object-cover object-top w-full h-full rounded-xl img">
+            <p class="text-white pt-2 text-sm"> {{ item.nameEmbreve }}</p>
+          </div>
+        }
+        }
     </div>
   </div>
 </section>
