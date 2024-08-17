@@ -1,6 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, Input} from '@angular/core';
-import { Categorias } from '../../../shared/interfaces/categorias';
+import { Categorias } from '../../../../shared/interfaces/categorias';
 
 @Component({
   selector: 'app-header',

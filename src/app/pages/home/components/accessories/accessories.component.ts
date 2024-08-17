@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, signal } from '@angular/core';
-import { Accessories } from '../../../shared/interfaces/accessories';
-import { BtnBlueComponent } from '../buttons/btn-blue/btn-blue.component';
+import { Accessories } from '../../../../shared/interfaces/accessories';
+import { BtnBlueComponent } from '../../../../core/components/buttons/btn-blue/btn-blue.component';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { EffectFade } from 'swiper/modules';
@@ -77,7 +77,6 @@ export class AccessoriesComponent implements OnInit{
           .swiper-pagination {
             position: relative;
             margin-top: 30px;
-            top: 15px;
           }
 
           .swiper-pagination-bullet {

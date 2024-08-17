@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
+import { NgOptimizedImage } from '@angular/common';
+import { SonyComponent } from "./core/components/sony/sony.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, LoginComponent],
-  template: `<app-home />`,
+  imports: [RouterOutlet, NgOptimizedImage, SonyComponent],
+  template: `
+  <app-sony />
+  <router-outlet />
+  `,
 })
 export class AppComponent {
   title = 'playstation';

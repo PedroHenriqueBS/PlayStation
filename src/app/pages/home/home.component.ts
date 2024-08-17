@@ -1,18 +1,19 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { HeaderComponent } from '../../core/components/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SwiperOptions } from 'swiper/types';
 import { SwiperContainer } from 'swiper/element';
 import { BtnWhiteComponent } from "../../core/components/buttons/btn-white/btn-white.component";
 import { SlideSwiper } from '../../shared/interfaces/slideSwiper';
-import { AccessoriesComponent } from '../../core/components/accessories/accessories.component';
+import { AccessoriesComponent } from './components/accessories/accessories.component';
 import { gamesList } from '../../shared/interfaces/games';
 import { CommonModule } from '@angular/common';
+import { BtnBlueComponent } from "../../core/components/buttons/btn-blue/btn-blue.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, BtnWhiteComponent, AccessoriesComponent],
+  imports: [CommonModule, HeaderComponent, BtnWhiteComponent, AccessoriesComponent, BtnBlueComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA,],
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit{
 
   swiperElement = signal<SwiperContainer | null>(null);
   swiperElement2 = signal<SwiperContainer | null>(null);
+  swiperElementPlus = signal<SwiperContainer | null>(null);
 
   // CONTAINER SWIPER 1
   configSwiper() {
@@ -96,14 +98,8 @@ export class HomeComponent implements OnInit{
     },
   ];
 
-  ngOnInit(): void {
-      this.configSwiper();
-      this.configSwiper2();
-  }
-
   // ARRAY GAMES LIST
   public buttonOpen: boolean | null = null;
-
   public gamesList: gamesList[] = [
     {
     img: 'assets/games-list/callof.jpg',
@@ -166,8 +162,8 @@ export class HomeComponent implements OnInit{
     nameEmbreve: 'EA SPORTS FC™ 25',
     },
     {
-    img: 'assets/games-list/fifa.png',
-    name: 'EA SPORTS FC™ 25',
+    img: 'assets/games-list/sonic.webp',
+    name: 'Sonic Frontiers',
     imgEmbreve: 'assets/games-list/fifa.png',
     nameEmbreve: 'EA SPORTS FC™ 25',
     },
@@ -181,7 +177,6 @@ export class HomeComponent implements OnInit{
 
   // BUTTON
   public button: number = 1;
-
   isOpen(id: number): void{
     const btn = document.querySelector('#btn');
     const btn2 = document.querySelector('#btn2');
@@ -203,5 +198,75 @@ export class HomeComponent implements OnInit{
     }
   }
 
+  // CONTAINER SWIPER PLUS
+  configSwiperPlus() {
+    const swiperElementConstructor = document.querySelector('.swiperPlus');
+    const swiperOptions: SwiperOptions = {
+      slidesPerView: 2,
+      navigation: true,
+      pagination: {
+        enabled: true,
+        clickable: true,
+      },
+      speed: 500,
+      loop: true,
+      initialSlide: 1,
+      centeredSlides:true,
+      spaceBetween: 20,
+      injectStyles: [
+        `
+          .swiper-button-next {
+            margin-right: 50px;
+            background: var(--btn-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
 
+          .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: var(--btn-blue-hover);
+          }
+
+          .swiper-button-next svg, .swiper-button-prev svg {
+            color: white;
+            width: 10px;
+          }
+
+          .swiper-button-prev {
+            margin-left: 50px;
+            background: var(--btn-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+
+          .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
+          }
+
+          .swiper-pagination-bullet {
+            border-radius: 5px;
+            width: 15px;
+            height: 3px;
+          }
+
+          .swiper-pagination-bullet-active {
+            background-color: var(--btn-blue-hover);
+          }
+
+        `,
+      ],
+    };
+
+    Object.assign(swiperElementConstructor!, swiperOptions);
+    this.swiperElementPlus.set(swiperElementConstructor as SwiperContainer);
+    this.swiperElementPlus()?.initialize();
+  }
+
+  ngOnInit(): void {
+    this.configSwiper();
+    this.configSwiper2();
+    this.configSwiperPlus();
+}
 }

@@ -1,9 +1,5 @@
-<!-- BANNER SONY -->
-<div class="flex justify-end bg-black">
-  <img [ngSrc]="logoSony" [alt]="logoAltSony" class="h-3.5 m-3" width="80" height="50">
-</div>
 
-<div class="flex relative justify-between px-5 py-2 bg-white">
+<header class="flex relative justify-between px-5 py-2 bg-white">
   <!-- NAVIGATION -->
   <div class="flex">
     <img src="assets/logos/logoPlay.webp" width="50" class="mr-3">
@@ -29,7 +25,7 @@
                       </div>
                     }
                   </div>
-              <div class="flex items-center gap-2 border-t-2 w-full justify-center pt-3">
+              <div class="flex items-center gap-2 border-t border-btnWhiteHover w-full justify-center pt-3">
                 @for (item of item.description; track item) {
                   @if(item == ''){
                     <span></span>
@@ -49,11 +45,11 @@
   <!-- SESSION LOGIN AND SEARCH-->
   <div class="flex items-center justify-center gap-4">
     <button class="bg-btnBlue text-white hover:bg-btnBlueHover rounded-3xl px-3 font-semibold tracking-wider">Iniciar sessão</button>
-    <div class="flex border p-2 hover:border-black">
+    <div class="flex border p-2 border-btnWhiteHover hover:border-black">
       <input type="text" class="outline-0 w-32 cursor-pointer placeholder:text-gray-700 " placeholder="Pesquisar">
       <img src="assets/lupa.png" width="24">
     </div>
   </div>
-</div>
+</header>
 
 
