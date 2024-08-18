@@ -91,7 +91,6 @@
 .disable {
   color: rgb(255, 255, 255);
   background-color: transparent;
-
   &:hover { color: var(--btn-blue); }
 }
 
@@ -140,12 +139,6 @@
   }
 }
 
-.vr {
-  background: url('../../../../public/assets/VR/backgroundVR.webp');
-  background-size: cover;
-  height: 550px;
-  margin-top: 35px;
-}
 
 
 

@@ -8,6 +8,7 @@ module.exports = {
         white: "var(--white)",
         black: "var(--black)",
         gray: "var(--gray)",
+        purple: "var(--background-purple)",
         // BUTTONS
         btnBlue: "var(--btn-blue)",
         btnBlueHover: "var(--btn-blue-hover)",
@@ -23,6 +24,9 @@ module.exports = {
         borderPlus: "var(--border-plus)",
         textDeluxe: "var(--text-deluxe)",
         boxExtra: "var(--box-extra)",
+        // UPDATE
+        boxUpdate: "var(--box-update)",
+        borderUpdate: "var(--border-update)",
       },
       boxShadow: {
         boxHeader: '2px 2px 5px gray',
@@ -30,8 +34,10 @@ module.exports = {
       spacing: {
         widthHeader: '70px',
         heightSlide: '500px',
+        heightVR: '550px',
+        heightUpdate: '450px',
+        heightUpdate2: '600px',
         widthAccessories: '500px',
-        heightVR: '430px',
         widtContainerSwiper: '1850px',
         heightPlus: '820px',
       },
@@ -39,6 +45,10 @@ module.exports = {
         'listGaming': 'repeat(6, minmax(0, 192px))',
         'listGamingMobile': 'repeat(2, minmax(0, 192px))',
       },
+      backgroundImage: {
+        'backgroundVR': "url('../public/assets/VR/backgroundVR.webp')",
+        'backgroundDate': "url('../public/assets/sectiondata.webp')",
+      }
     },
   },
   plugins: [],

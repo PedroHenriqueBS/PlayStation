@@ -9,6 +9,7 @@ import { AccessoriesComponent } from './components/accessories/accessories.compo
 import { gamesList } from '../../shared/interfaces/games';
 import { CommonModule } from '@angular/common';
 import { BtnBlueComponent } from "../../core/components/buttons/btn-blue/btn-blue.component";
+import { slidesUpdate } from '../../shared/interfaces/slidesUpdate';
 
 @Component({
   selector: 'app-home',
@@ -21,12 +22,13 @@ import { BtnBlueComponent } from "../../core/components/buttons/btn-blue/btn-blu
 
 export class HomeComponent implements OnInit{
 
-  swiperElement = signal<SwiperContainer | null>(null);
-  swiperElement2 = signal<SwiperContainer | null>(null);
+  swiperElementHeader = signal<SwiperContainer | null>(null);
+  swiperElementAccessories = signal<SwiperContainer | null>(null);
   swiperElementPlus = signal<SwiperContainer | null>(null);
+  swiperElementUpdate = signal<SwiperContainer | null>(null);
 
-  // CONTAINER SWIPER 1
-  configSwiper() {
+  // CONTAINER SWIPER HEADER
+  configSwiperHeader() {
     const swiperElementConstructor = document.querySelector('.swiper');
     const swiperOptions: SwiperOptions = {
       slidesPerView: 1,
@@ -39,23 +41,10 @@ export class HomeComponent implements OnInit{
     };
 
     Object.assign(swiperElementConstructor!, swiperOptions);
-    this.swiperElement.set(swiperElementConstructor as SwiperContainer);
-    this.swiperElement()?.initialize();
+    this.swiperElementHeader.set(swiperElementConstructor as SwiperContainer);
+    this.swiperElementHeader()?.initialize();
 
   }
-
-  // CONTAINER SWIPER 2
-  configSwiper2() {
-    const swiperElementConstructor2 = document.querySelector('.swiper2');
-    const swiperOptions2: SwiperOptions = {
-     slidesPerView: 5,
-    };
-
-    Object.assign(swiperElementConstructor2!, swiperOptions2);
-    this.swiperElement2.set(swiperElementConstructor2 as SwiperContainer);
-    this.swiperElement2()?.initialize();
-  }
-
   public slideSwiper: SlideSwiper[] = [
     {
       imgFundo: 'assets/slides/nba.jpg',
@@ -97,6 +86,18 @@ export class HomeComponent implements OnInit{
       button: 'Navegar pelos jogos',
     },
   ];
+
+  // CONTAINER SWIPER ACCESSORIES
+  configSwiperAccessories() {
+    const swiperElementConstructor2 = document.querySelector('.swiper2');
+    const swiperOptions2: SwiperOptions = {
+     slidesPerView: 5,
+    };
+
+    Object.assign(swiperElementConstructor2!, swiperOptions2);
+    this.swiperElementAccessories.set(swiperElementConstructor2 as SwiperContainer);
+    this.swiperElementAccessories()?.initialize();
+  }
 
   // ARRAY GAMES LIST
   public buttonOpen: boolean | null = null;
@@ -175,7 +176,7 @@ export class HomeComponent implements OnInit{
     },
 ]
 
-  // BUTTON
+  // BUTTON GAMES LIST
   public button: number = 1;
   isOpen(id: number): void{
     const btn = document.querySelector('#btn');
@@ -264,9 +265,41 @@ export class HomeComponent implements OnInit{
     this.swiperElementPlus()?.initialize();
   }
 
+  // CONTAINER SWIPER UPDATE
+  configSwiperUpdate(){
+    const swiperElementConstructor = document.querySelector('.swiper-update');
+    const swiperOptions: SwiperOptions = {
+      slidesPerView: 3,
+    };
+
+    Object.assign(swiperElementConstructor!, swiperOptions);
+    this.swiperElementUpdate.set(swiperElementConstructor as SwiperContainer);
+    this.swiperElementUpdate()?.initialize();
+  }
+
+  // ARRAY SWIPER SLIDES
+  public slidesUpdate: slidesUpdate[] = [
+    {
+      img: 'assets/update/update.webp',
+      title: 'Novos lançamentos',
+      description: 'Confira os maiores novos títulos do mês, incluindo Concord.',
+    },
+    {
+      img: 'assets/update/update1.webp',
+      title: 'Jogos Indie para PlayStation',
+      description: 'Descubra os lançamentos indie mais inovadores e exclusivos deste mês, inluindo Cat Quest III.',
+    },
+    {
+      img: 'assets/update/update2.webp',
+      title: 'Últimas atualizações',
+      description: 'Fique em dia com os maiores novos eventos do mês, incluindo a primeira atualização de the first Descendant.',
+    },
+  ]
+
   ngOnInit(): void {
-    this.configSwiper();
-    this.configSwiper2();
+    this.configSwiperHeader();
+    this.configSwiperAccessories();
     this.configSwiperPlus();
+    this.configSwiperUpdate();
 }
 }
