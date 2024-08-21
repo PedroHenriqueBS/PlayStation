@@ -139,6 +139,17 @@
   }
 }
 
+.swiper-store {
+  swiper-slide {
+    transition: .3s;
+    .imgStore {
+      box-shadow: 1px 3px 10px rgb(57, 57, 57);
+      transition: .2s;
+      &:hover { box-shadow: 1px 3px 20px rgb(57, 57, 57);}
+    }
+  }
+}
+
 
 
 

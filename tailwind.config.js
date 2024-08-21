@@ -48,6 +48,9 @@ module.exports = {
       backgroundImage: {
         'backgroundVR': "url('../public/assets/VR/backgroundVR.webp')",
         'backgroundDate': "url('../public/assets/sectiondata.webp')",
+      },
+      scale: {
+        '102': '1.02',
       }
     },
   },
