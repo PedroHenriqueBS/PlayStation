@@ -5,15 +5,17 @@
   @for(item of slideSwiper; track item) {
     <swiper-slide class="h-auto" lazy="true">
       <img [src]="item.imgFundo" loading="lazy" class="fundo">
-        <div class="w-1/3 absolute flex flex-col mt-24 ml-24 gap-7 z-10">
-          <img [src]="item.imgTitle" class="title" data-swiper-parallax-y="200">
-          <h1 class="text-5xl text-white" data-swiper-parallax-y="100">
-          {{ item.title }}
-          </h1>
-          <span class="text-white text-lg" data-swiper-parallax-y="100">
-          {{ item.subTitle }}
-          </span>
-          <btn-white class="flex" data-swiper-parallax-y="100" textButton="{{item.button}}"/>
+        <div class="max-w-screen-2xl m-auto">
+          <div class="w-1/3 absolute flex flex-col mt-24 ml-24 gap-7 z-10">
+            <img [src]="item.imgTitle" class="title" data-swiper-parallax-y="200">
+            <h1 class="text-5xl text-white font-light" data-swiper-parallax-y="100">
+            {{ item.title }}
+            </h1>
+            <span class="text-white text-lg font-light" data-swiper-parallax-y="100">
+            {{ item.subTitle }}
+            </span>
+            <btn-white class="flex" data-swiper-parallax-y="100" textButton="{{item.button}}"/>
+          </div>
         </div>
     </swiper-slide> }
 </swiper-container>
@@ -42,7 +44,7 @@
   <div class="max-w-screen-2xl m-auto">
     <!-- Header Games-->
     <div class="text-white flex flex-col items-center gap-8 mb-10">
-      <h1 class="text-4xl text-center px-5">Jogos incríveis de PS4 e PS5 já disponíveis ou chegando em breve</h1>
+      <h1 class="text-4xl text-center px-5 font-light">Jogos incríveis de PS4 e PS5 já disponíveis ou chegando em breve</h1>
       <!-- Buttons -->
       <div class="flex bg-bgButton rounded-3xl hover:shadow-2xl">
         <button (click)="isOpen(1)">
@@ -81,7 +83,7 @@
   <img src="assets/plus/background.plus.avif" alt="background section plus" class="w-full h-heightPlus object-cover absolute z-10">
   <div class="relative z-20 max-w-screen-2xl m-auto px-5 pt-24 text-center flex flex-col gap-5 items-center mb-4">
     <img src="assets/plus/PlayStationPlus.png" alt="logo ps5 plus" width="230">
-    <h1 class="text-4xl">Descubra o PlayStation Plus</h1>
+    <h1 class="text-4xl font-light">Descubra o PlayStation Plus</h1>
     <p class="text-gray">Curta centenas de jogos para PS5 e PS4, além de clássicos do PlayStation. Descubra aventuras épicas, jogos independentes sem igual, favoritos para a família inteira e muito mais.</p>
   </div>
 
@@ -91,8 +93,8 @@
       <div class="background-linear"></div>
       <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
         <div class="max-w-52 uppercase text-center bg-boxDeluxe text-textDeluxe border border-borderPlus font-bold tracking-widest">deluxe</div>
-        <h1 class="text-2xl">PlayStation Plus Deluxe</h1>
-        <p>Aproveite todas as vantagens dos planos Extra e Essencial do PlayStation Plus, além de beneficios exclusivos, como a experimentação de jogos, o streaming na nuvem e o catálogo de clássicos.</p>
+        <h1 class="text-2xl font-light">PlayStation Plus Deluxe</h1>
+        <p class="font-light">Aproveite todas as vantagens dos planos Extra e Essencial do PlayStation Plus, além de beneficios exclusivos, como a experimentação de jogos, o streaming na nuvem e o catálogo de clássicos.</p>
       </div>
     </swiper-slide>
     <swiper-slide>
@@ -100,8 +102,8 @@
       <div class="background-linear"></div>
       <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
         <div class="max-w-52 uppercase text-center bg-boxExtra text-black border border-borderPlus font-bold tracking-widest">extra</div>
-        <h1 class="text-2xl">PlayStation Plus Extra</h1>
-        <p>Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
+        <h1 class="text-2xl font-light">PlayStation Plus Extra</h1>
+        <p class="font-light">Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
       </div>
     </swiper-slide>
     <swiper-slide>
@@ -110,8 +112,8 @@
       <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
         <div class="max-w-52 uppercase text-center bg-white text-black border border-borderPlus font-bold tracking-widest">essential
         </div>
-        <h1 class="text-2xl">PlayStation Plus Essential</h1>
-        <p>Novos jogos todos os meses, modo multijogador online, descontos exclusivos na Ps Store e muito mais, disponíveis com os três planos de assinatura do PlaySation Plus</p>
+        <h1 class="text-2xl font-light">PlayStation Plus Essential</h1>
+        <p class="font-light">Novos jogos todos os meses, modo multijogador online, descontos exclusivos na Ps Store e muito mais, disponíveis com os três planos de assinatura do PlaySation Plus</p>
       </div>
     </swiper-slide>
     <swiper-slide>
@@ -119,8 +121,8 @@
       <img src="assets/plus/extra.webp" alt="background extra">
       <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
         <div class="max-w-52 uppercase text-center bg-boxExtra text-black border border-borderPlus font-bold tracking-widest">extra</div>
-        <h1 class="text-2xl">PlayStation Plus Extra</h1>
-        <p>Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
+        <h1 class="text-2xl font-light">PlayStation Plus Extra</h1>
+        <p class="font-light">Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
       </div>
     </swiper-slide>
   </swiper-container>
@@ -130,8 +132,8 @@
 <!-- VR -->
 <section class="relative z-10 bg-backgroundVR bg-cover mt-8 h-heightVR">
   <div class="max-w-7xl m-auto flex items-center h-full">
-    <div class="relative max-w-lg z-50 flex flex-col gap-7 text-white justify-center h-full px-5">
-      <h1 class="text-4xl font-light">Sinta uma nova realidade</h1>
+    <div class="relative max-w-xl z-50 flex flex-col gap-7 text-white justify-center h-full px-5">
+      <h1 class="text-5xl font-light">Sinta uma nova realidade</h1>
       <p class="font-light">Mergulhe em mundos incríveis que vão além da realidade com o inovador  headset PlayStation VR2 e o controle PlayStation VR2 Sense.</p>
       <btn-white class="flex" textButton="Saiba mais"/>
     </div>
@@ -142,9 +144,9 @@
  <section class="w-full h-heightUpdate bg-backgroundDate bg-cover border-t">
   <div class="max-w-screen-xl m-auto h-full">
     <div class="flex flex-col justify-center h-full gap-5 px-5">
-      <h1 class="text-white text-5xl">EM AGOSTO <br>
+      <h1 class="text-white text-5xl font-light">EM AGOSTO <br>
         NO PLAYSTATION</h1>
-      <p class="text-borderPlus font-bold">Confira os maiores lançamentos deste mês, além de recursos exclusivos, guias <br> e muito mais.</p>
+      <p class="text-borderPlus">Confira os maiores lançamentos deste mês, além de recursos exclusivos, guias <br> e muito mais.</p>
     </div>
   </div>
 </section>
@@ -168,7 +170,7 @@
   <div class="max-w-screen-2xl m-auto px-5 flex items-center justify-center gap-10 h-heightUpdate2">
     <div class="max-w-96 flex flex-col gap-5">
       <img src="assets/logos/store.png" alt="logo playstation store" width="300">
-      <h1 class="text-4xl">Novas promoções na PlayStation™Store</h1>
+      <h1 class="text-4xl font-light">Novas promoções na PlayStation™Store</h1>
       <p class="text-gray">Descubra os mais novos descontos e as promoções sazonais de grandes jogos e expansões para PS5 e PS4.</p>
       <btn-orange textButton="Ver todos os descontos" class="flex" />
     </div>
@@ -177,13 +179,13 @@
     </div>
   </div>
 
-  <h1 class="mx-5 my-10 text-center text-4xl">As novidades do PlayStation Blog</h1>
+  <h1 class="mx-5 my-10 text-center text-4xl font-light">As novidades do PlayStation Blog</h1>
   <swiper-container init="false" class="swiper-store m-auto relative w-full h-full">
     @for(item of listStore; track item) {
       <swiper-slide class="flex flex-col justify-between rounded-2xl shadow-lg p-5 mt-5 h-heightUpdate2 duration-1000 hover:shadow-2xl cursor-pointer">
         <div class="flex flex-col gap-4">
           <img [src]="item.img" alt="" class="rounded-2xl imgStore">
-          <h1 class="text-xl"> {{ item.title }}</h1>
+          <h1 class="text-xl font-light"> {{ item.title }}</h1>
           <p class="text-sm text-gray"> {{ item.description }}</p>
         </div>
         <div class="flex gap-3">
@@ -203,7 +205,7 @@
  <section class="w-full bg-social h-96 mt-14">
   <div class="max-w-screen-xl m-auto h-full flex justify-center items-center">
     <div class="flex flex-col items-center gap-16">
-      <h1 class="text-4xl">Siga-nos nas redes sociais</h1>
+      <h1 class="text-4xl font-light">Siga-nos nas redes sociais</h1>
       <div class="flex gap-8">
         <img src="assets/redes-sociais/twitter.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
         <img src="assets/redes-sociais/facebook.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
