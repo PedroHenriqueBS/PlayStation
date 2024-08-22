@@ -151,7 +151,7 @@
 <section class="w-full bg-purple h-heightUpdate2 flex flex-col justify-center items-center">
   <swiper-container init="false" class="swiper-update mx-16 max-w-screen-2xl m-auto">
     @for(item of slidesUpdate; track item){
-      <swiper-slides class="w-full p-4 rounded-2xl flex flex-col gap-5 mx-1 my-5 text-white duration-300 border-2 border-transparent hover:bg-boxUpdate hover:border-borderUpdate hover:-translate-y-2 cursor-pointer">
+      <swiper-slides class="w-full p-4 rounded-2xl flex flex-col gap-5 mx-1 my-5 text-white duration-300 border-4 border-transparent hover:bg-boxUpdate hover:border-borderUpdate hover:-translate-y-2 cursor-pointer">
         <img [src]="item.img" alt=""  class="rounded-2xl">
         <div class="flex flex-col gap-3 pb-5">
           <h1 class="text-xl">{{ item.title }}</h1>
@@ -162,7 +162,6 @@
   </swiper-container>
   <btn-white class="flex justify-center mt-5 mb-10" textButton="Descubra mais"/>
 </section>
-
 
  <!-- STORE -->
 <section class="w-full bg-white">
@@ -200,7 +199,33 @@
   </swiper-container>
 </section>
 
+<!-- REDES SOCIAIS -->
+ <section class="w-full bg-social h-96 mt-14">
+  <div class="max-w-screen-xl m-auto h-full flex justify-center items-center">
+    <div class="flex flex-col items-center gap-16">
+      <h1 class="text-4xl">Siga-nos nas redes sociais</h1>
+      <div class="flex gap-8">
+        <img src="assets/redes-sociais/twitter.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+        <img src="assets/redes-sociais/facebook.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+        <img src="assets/redes-sociais/instagram.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+        <img src="assets/redes-sociais/youtube.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+      </div>
+    </div>
+  </div>
+ </section>
 
+ <!-- FOOTER -->
+ <footer class="w-full bg-footer h-80">
+  <div class="max-w-screen-2xl m-auto pt-6">
+    <img src="assets/logos/footer.png" alt="" width="120">
+    <hr class="my-6 text-btnBlue">
+    <div class="text-center text-white">
+      <h1 class="text-lg">Site desenvolvido por <a href="https://github.com/PedroHenriqueBS" target="_blank" class="text-textDeluxe">Pedro Henrique</a> com base no modelo do site da PlayStation.</h1>
+      <span class="text-lg">Para ver mais projetos acesse meu GitHub:</span><br>
+      <a href="https://github.com/PedroHenriqueBS?tab=repositories" target="_blank" class="text-textDeluxe">https://github.com/PedroHenriqueBS?tab=repositories</a>
+    </div>
+  </div>
+ </footer>
 
 
 

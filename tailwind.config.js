@@ -9,6 +9,8 @@ module.exports = {
         black: "var(--black)",
         gray: "var(--gray)",
         purple: "var(--background-purple)",
+        social: "var(--social)",
+        footer: "var(--footer)",
         // BUTTONS
         btnBlue: "var(--btn-blue)",
         btnBlueHover: "var(--btn-blue-hover)",
