@@ -1,6 +1,6 @@
 .arrow { transition: transform 0.3s ease; }
 .rotate { transform: rotate(180deg); transition: transform 0.3s ease; }
-
+.search:has(input:focus){ border: 1px solid black; }
 
 
 

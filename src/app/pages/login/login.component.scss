@@ -1,0 +1,16 @@
+main {
+  background-image: url('../../../../public/assets/background_light.jpg');
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: calc(100dvh - 38px);
+  overflow: hidden;
+}
+.borderActive:has(input:focus){
+  border: 2px solid var(--btn-login);
+}
+
+input:focus {
+  background-color: var(--input-hover);
+}
+

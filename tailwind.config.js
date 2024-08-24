@@ -19,6 +19,7 @@ module.exports = {
         btnBlueHover: "var(--btn-blue-hover)",
         btnWhite: "var(--btn-white)",
         btnWhiteHover: "var(--btn-white-hover)",
+        btnWhiteHover2: "var(--btn-white-hover2)",
         btnOrange: "var(--btn-orange)",
         btnOrangeHover: "var(--btn-orange-hover)",
         // GAMES LIST
@@ -32,6 +33,11 @@ module.exports = {
         // UPDATE
         boxUpdate: "var(--box-update)",
         borderUpdate: "var(--border-update)",
+        // LOGIN
+        backgroundLogin: "var(--background-login)",
+        btnLogin: "var(--btn-login)",
+        input: "var(--input)",
+        inputHover: "var(--input-hover)",
       },
       boxShadow: {
         boxHeader: '2px 2px 5px gray',

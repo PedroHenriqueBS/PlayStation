@@ -29,54 +29,62 @@
 </swiper-container>
 
 <!-- SLIDE ACCESSORIES -->
- @defer(on viewport){
-   <app-accessories />
- } @placeholder {
-    <p>Loading...</p>
- } @loading {
-    <p>Loading...</p>
- } @error {
-    <p>Error!</p>
- }
+@defer(on viewport){
+  <app-accessories />
+} @placeholder {
+  <p>Loading...</p>
+} @loading {
+  <p>Loading...</p>
+} @error {
+  <p>Error!</p>
+}
 
  <!-- GAMES LIST -->
-<section class="bg-bgGames w-full py-12 mt-10">
-  <div class="max-w-screen-2xl m-auto">
-    <!-- Header Games-->
-    <div class="text-white flex flex-col items-center gap-8 mb-10">
-      <h1 class="text-4xl text-center px-5 font-light">Jogos incríveis de PS4 e PS5 já disponíveis ou chegando em breve</h1>
-      <!-- Buttons -->
-      <div class="flex bg-bgButton rounded-3xl hover:shadow-2xl">
-        <button (click)="isOpen(1)">
-          <div class="button active" id="btn">Novos lançamentos</div>
-        </button>
-        <button (click)="isOpen(2)">
-          <div class="button disable" id="btn2">Em breve</div>
-        </button>
+ @defer(on viewport){
+  <section class="bg-bgGames w-full py-12 mt-10">
+    <div class="max-w-screen-2xl m-auto">
+      <!-- Header Games-->
+      <div class="text-white flex flex-col items-center gap-8 mb-10">
+        <h1 class="text-4xl text-center px-5 font-light">Jogos incríveis de PS4 e PS5 já disponíveis ou chegando em breve</h1>
+        <!-- Buttons -->
+        <div class="flex bg-bgButton rounded-3xl hover:shadow-2xl">
+          <button (click)="isOpen(1)">
+            <div class="button active" id="btn">Novos lançamentos</div>
+          </button>
+          <button (click)="isOpen(2)">
+            <div class="button disable" id="btn2">Em breve</div>
+          </button>
+        </div>
       </div>
-    </div>
-    <!-- GAMES -->
-    <div class="grid grid-cols-listGaming gap-y-14 games gap-x-5 mx-5 items-center justify-center max-md:grid-cols-listGamingMobile mb-12">
-      <!-- NOVOS LANÇAMENTOS -->
-      @if(button == 1) {
-        @for(item of gamesList; track item){
+      <!-- GAMES -->
+      <div class="grid grid-cols-listGaming gap-y-14 games gap-x-5 mx-5 items-center justify-center max-md:grid-cols-listGamingMobile mb-12">
+        <!-- NOVOS LANÇAMENTOS -->
+        @if(button == 1) {
+          @for(item of gamesList; track item){
+              <div class="w-full h-48 cursor-pointer gamesBox">
+                <img [src]="item.img" class="object-cover object-top w-full h-full rounded-xl img">
+                <p class="text-white pt-2 text-sm"> {{ item.name }}</p>
+              </div>
+            }
+          <!-- EM BREVE-->
+        } @else if (button == 2) {
+          @for(item of gamesList; track item){
             <div class="w-full h-48 cursor-pointer gamesBox">
-              <img [src]="item.img" class="object-cover object-top w-full h-full rounded-xl img">
-              <p class="text-white pt-2 text-sm"> {{ item.name }}</p>
+              <img [src]="item.imgEmbreve" class="object-cover object-top w-full h-full rounded-xl img">
+              <p class="text-white pt-2 text-sm"> {{ item.nameEmbreve }}</p>
             </div>
           }
-        <!-- EM BREVE-->
-      } @else if (button == 2) {
-        @for(item of gamesList; track item){
-          <div class="w-full h-48 cursor-pointer gamesBox">
-            <img [src]="item.imgEmbreve" class="object-cover object-top w-full h-full rounded-xl img">
-            <p class="text-white pt-2 text-sm"> {{ item.nameEmbreve }}</p>
-          </div>
-        }
-        }
+          }
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+} @placeholder {
+   <p>Loading...</p>
+} @loading {
+   <p>Loading...</p>
+} @error {
+   <p>Error!</p>
+}
 
 <!-- PS5 PLUS -->
 <section class="relative z-10">
@@ -130,18 +138,26 @@
 </section>
 
 <!-- VR -->
-<section class="relative z-10 bg-backgroundVR bg-cover mt-8 h-heightVR">
-  <div class="max-w-7xl m-auto flex items-center h-full">
-    <div class="relative max-w-xl z-50 flex flex-col gap-7 text-white justify-center h-full px-5">
-      <h1 class="text-5xl font-light">Sinta uma nova realidade</h1>
-      <p class="font-light">Mergulhe em mundos incríveis que vão além da realidade com o inovador  headset PlayStation VR2 e o controle PlayStation VR2 Sense.</p>
-      <btn-white class="flex" textButton="Saiba mais"/>
+@defer(on viewport){
+  <section class="relative z-10 bg-backgroundVR bg-cover mt-8 h-heightVR">
+    <div class="max-w-7xl m-auto flex items-center h-full">
+      <div class="relative max-w-xl z-50 flex flex-col gap-7 text-white justify-center h-full px-5">
+        <h1 class="text-5xl font-light">Sinta uma nova realidade</h1>
+        <p class="font-light">Mergulhe em mundos incríveis que vão além da realidade com o inovador  headset PlayStation VR2 e o controle PlayStation VR2 Sense.</p>
+        <btn-white class="flex" textButton="Saiba mais"/>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+} @placeholder {
+  <p>Loading...</p>
+} @loading {
+  <p>Loading...</p>
+} @error {
+  <p>Error!</p>
+}
 
 <!-- DATE NEW-->
- <section class="w-full h-heightUpdate bg-backgroundDate bg-cover border-t">
+<section class="w-full h-heightUpdate bg-backgroundDate bg-cover border-t">
   <div class="max-w-screen-xl m-auto h-full">
     <div class="flex flex-col justify-center h-full gap-5 px-5">
       <h1 class="text-white text-5xl font-light">EM AGOSTO <br>
@@ -202,32 +218,49 @@
 </section>
 
 <!-- REDES SOCIAIS -->
- <section class="w-full bg-social h-96 mt-14">
-  <div class="max-w-screen-xl m-auto h-full flex justify-center items-center">
-    <div class="flex flex-col items-center gap-16">
-      <h1 class="text-4xl font-light">Siga-nos nas redes sociais</h1>
-      <div class="flex gap-8">
-        <img src="assets/redes-sociais/twitter.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
-        <img src="assets/redes-sociais/facebook.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
-        <img src="assets/redes-sociais/instagram.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
-        <img src="assets/redes-sociais/youtube.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+@defer(on viewport){
+  <section class="w-full bg-social h-96 mt-14">
+    <div class="max-w-screen-xl m-auto h-full flex justify-center items-center">
+      <div class="flex flex-col items-center gap-16">
+        <h1 class="text-4xl font-light">Siga-nos nas redes sociais</h1>
+        <div class="flex gap-8">
+          <img src="assets/redes-sociais/twitter.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+          <img src="assets/redes-sociais/facebook.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+          <img src="assets/redes-sociais/instagram.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+          <img src="assets/redes-sociais/youtube.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
+        </div>
       </div>
     </div>
-  </div>
- </section>
+  </section>
+} @placeholder {
+  <p>Loading...</p>
+} @loading {
+  <p>Loading...</p>
+} @error {
+  <p>Error!</p>
+}
 
  <!-- FOOTER -->
- <footer class="w-full bg-footer h-80">
-  <div class="max-w-screen-2xl m-auto pt-6">
-    <img src="assets/logos/footer.png" alt="" width="120">
-    <hr class="my-6 text-btnBlue">
-    <div class="text-center text-white">
-      <h1 class="text-lg">Site desenvolvido por <a href="https://github.com/PedroHenriqueBS" target="_blank" class="text-textDeluxe">Pedro Henrique</a> com base no modelo do site da PlayStation.</h1>
-      <span class="text-lg">Para ver mais projetos acesse meu GitHub:</span><br>
-      <a href="https://github.com/PedroHenriqueBS?tab=repositories" target="_blank" class="text-textDeluxe">https://github.com/PedroHenriqueBS?tab=repositories</a>
+ @defer(on viewport){
+  <footer class="w-full bg-footer h-80">
+    <div class="max-w-screen-2xl m-auto pt-6">
+      <img src="assets/logos/footer.png" alt="" width="120">
+      <hr class="my-6 text-btnBlue">
+      <div class="text-center text-white">
+        <h1 class="text-lg">Site desenvolvido por <a href="https://github.com/PedroHenriqueBS" target="_blank" class="text-textDeluxe">Pedro Henrique</a> com base no modelo do site da PlayStation.</h1>
+        <span class="text-lg">Para ver mais projetos acesse meu GitHub:</span><br>
+        <a href="https://github.com/PedroHenriqueBS?tab=repositories" target="_blank" class="text-textDeluxe">https://github.com/PedroHenriqueBS?tab=repositories</a>
+      </div>
     </div>
-  </div>
- </footer>
+   </footer>
+} @placeholder {
+  <p>Loading...</p>
+} @loading {
+  <p>Loading...</p>
+} @error {
+  <p>Error!</p>
+}
+
 
 
 
