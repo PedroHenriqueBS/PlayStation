@@ -1,5 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, Input} from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit} from '@angular/core';
 import { Categorias } from '../../../../shared/interfaces/categorias';
 import { RouterLink } from '@angular/router';
 
@@ -10,7 +10,20 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements DoCheck{
+  public mobile = window.matchMedia("(max-width:768px)");
+  public desktop = window.matchMedia("(min-width:769px)");
+
+  ngDoCheck(): void {
+    if (this.desktop.matches) {
+      this.menuOpen = true;
+    }
+  }
+
+  public menuOpen: boolean = false;
+  isOpen(){
+    this.menuOpen = !this.menuOpen;
+  }
 
   public logoSony: string = 'assets/logos/logoSony.webp';
   public logoAltSony: string = 'Logo da marca sony';
