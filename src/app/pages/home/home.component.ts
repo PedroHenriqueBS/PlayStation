@@ -95,6 +95,20 @@ export class HomeComponent implements OnInit{
     const swiperElementConstructor2 = document.querySelector('.swiper2');
     const swiperOptions2: SwiperOptions = {
      slidesPerView: 5,
+     breakpoints: {
+      0: {
+        slidesPerView: 1,
+      }, 400: {
+        slidesPerView: 2,
+      }, 530: {
+        slidesPerView: 3,
+      }, 800: {
+        slidesPerView: 4,
+      }, 965: {
+        slidesPerView: 5
+      }
+     }
+
     };
 
     Object.assign(swiperElementConstructor2!, swiperOptions2);
