@@ -12,6 +12,7 @@
 }
 
 .accessories2 {
+  position: 0 10px;
   swiper-slide {
     width: 250px !important;
     opacity: .5;
@@ -38,5 +39,11 @@
     .fundoImg {
       border: 3px solid var(--btn-blue-hover);
     }
+  }
+}
+
+@media (max-width: 940px){
+  .accessories {
+    height: auto;
   }
 }

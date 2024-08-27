@@ -54,7 +54,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         'listGaming': 'repeat(6, minmax(0, 192px))',
+        'listGamingTablet': 'repeat(4, minmax(0, 192px))',
         'listGamingMobile': 'repeat(2, minmax(0, 192px))',
+        'listGamingMiniMobile': 'repeat(1, minmax(0, 200px))',
       },
       backgroundImage: {
         'backgroundVR': "url('../public/assets/VR/backgroundVR.webp')",

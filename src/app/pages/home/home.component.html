@@ -57,7 +57,7 @@
         </div>
       </div>
       <!-- GAMES -->
-      <div class="grid grid-cols-listGaming gap-y-14 games gap-x-5 mx-5 items-center justify-center max-md:grid-cols-listGamingMobile mb-12">
+      <div class="grid grid-cols-listGaming gap-y-14 games gap-x-5 mx-5 items-center justify-center max-md:grid-cols-listGamingMobile mb-12 max-lg:grid-cols-listGamingTablet max-[400px]:grid-cols-listGamingMiniMobile">
         <!-- NOVOS LANÇAMENTOS -->
         @if(button == 1) {
           @for(item of gamesList; track item){
@@ -88,58 +88,58 @@
 
 <!-- PS5 PLUS -->
 <section class="relative z-10">
-  <img src="assets/plus/background.plus.avif" alt="background section plus" class="w-full h-heightPlus object-cover absolute z-10">
+  <img src="assets/plus/background.plus.avif" alt="background section plus" class="w-full h-full object-cover absolute z-10">
   <div class="relative z-20 max-w-screen-2xl m-auto px-5 pt-24 text-center flex flex-col gap-5 items-center mb-4">
     <img src="assets/plus/PlayStationPlus.png" alt="logo ps5 plus" width="230">
-    <h1 class="text-4xl font-light">Descubra o PlayStation Plus</h1>
-    <p class="text-gray">Curta centenas de jogos para PS5 e PS4, além de clássicos do PlayStation. Descubra aventuras épicas, jogos independentes sem igual, favoritos para a família inteira e muito mais.</p>
+    <h1 class="text-4xl font-light max-md:text-2xl">Descubra o PlayStation Plus</h1>
+    <p class="text-gray max-md:text-sm">Curta centenas de jogos para PS5 e PS4, além de clássicos do PlayStation. Descubra aventuras épicas, jogos independentes sem igual, favoritos para a família inteira e muito mais.</p>
   </div>
 
   <swiper-container init="false" class="swiperPlus" >
     <swiper-slide>
       <img src="assets/plus/deluxe.webp" alt="background deluxe">
       <div class="background-linear"></div>
-      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
-        <div class="max-w-52 uppercase text-center bg-boxDeluxe text-textDeluxe border border-borderPlus font-bold tracking-widest">deluxe</div>
-        <h1 class="text-2xl font-light">PlayStation Plus Deluxe</h1>
-        <p class="font-light">Aproveite todas as vantagens dos planos Extra e Essencial do PlayStation Plus, além de beneficios exclusivos, como a experimentação de jogos, o streaming na nuvem e o catálogo de clássicos.</p>
+      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 pr-7 text-white">
+        <div class="max-w-52 uppercase text-center bg-boxDeluxe text-textDeluxe border border-borderPlus font-bold tracking-widest max-md:text-xs">deluxe</div>
+        <h1 class="text-2xl font-light max-md:text-lg">PlayStation Plus Deluxe</h1>
+        <p class="font-light max-md:text-xs">Aproveite todas as vantagens dos planos Extra e Essencial do PlayStation Plus, além de beneficios exclusivos, como a experimentação de jogos, o streaming na nuvem e o catálogo de clássicos.</p>
       </div>
     </swiper-slide>
     <swiper-slide>
       <img src="assets/plus/extra.webp" alt="background extra">
       <div class="background-linear"></div>
-      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
-        <div class="max-w-52 uppercase text-center bg-boxExtra text-black border border-borderPlus font-bold tracking-widest">extra</div>
-        <h1 class="text-2xl font-light">PlayStation Plus Extra</h1>
-        <p class="font-light">Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
+      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 pr-7 text-white">
+        <div class="max-w-52 uppercase text-center bg-boxExtra text-black border border-borderPlus font-bold tracking-widest max-md:text-xs">extra</div>
+        <h1 class="text-2xl font-light max-md:text-lg">PlayStation Plus Extra</h1>
+        <p class="font-light max-md:text-xs">Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="background-linear"></div>
       <img src="assets/plus/essential.webp" alt="background essential">
-      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
-        <div class="max-w-52 uppercase text-center bg-white text-black border border-borderPlus font-bold tracking-widest">essential
+      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 pr-7 text-white">
+        <div class="max-w-52 uppercase text-center bg-white text-black border border-borderPlus font-bold tracking-widest max-md:text-xs">essential
         </div>
-        <h1 class="text-2xl font-light">PlayStation Plus Essential</h1>
-        <p class="font-light">Novos jogos todos os meses, modo multijogador online, descontos exclusivos na Ps Store e muito mais, disponíveis com os três planos de assinatura do PlaySation Plus</p>
+        <h1 class="text-2xl font-light max-md:text-lg">PlayStation Plus Essential</h1>
+        <p class="font-light max-md:text-xs">Novos jogos todos os meses, modo multijogador online, descontos exclusivos na Ps Store e muito mais, disponíveis com os três planos de assinatura do PlaySation Plus</p>
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="background-linear"></div>
       <img src="assets/plus/extra.webp" alt="background extra">
-      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 text-white">
-        <div class="max-w-52 uppercase text-center bg-boxExtra text-black border border-borderPlus font-bold tracking-widest">extra</div>
-        <h1 class="text-2xl font-light">PlayStation Plus Extra</h1>
-        <p class="font-light">Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
+      <div class="flex flex-col gap-3 absolute bottom-0 max-w-lg pl-7 pb-7 pr-7 text-white">
+        <div class="max-w-52 uppercase text-center bg-boxExtra text-black border border-borderPlus font-bold tracking-widest max-md:text-xs">extra</div>
+        <h1 class="text-2xl font-light max-md:text-lg">PlayStation Plus Extra</h1>
+        <p class="font-light max-md:text-xs">Baixe e curta centenas de jogos para PS5 e PS4 no catálogo de jogos, além de todas as vantagens do PlaySation Plus Essencial.</p>
       </div>
     </swiper-slide>
   </swiper-container>
-  <btn-blue textButton="Descubra o PlayStation Plus" class="flex relative z-20 justify-center mx-5"/>
+  <btn-blue textButton="Descubra o PlayStation Plus" class="flex relative z-20 justify-center mx-5 pb-5"/>
 </section>
 
 <!-- VR -->
 @defer(on viewport){
-  <section class="relative z-10 bg-backgroundVR bg-cover mt-8 h-heightVR">
+  <section class="relative z-10 bg-backgroundVR bg-cover h-heightVR">
     <div class="max-w-7xl m-auto flex items-center h-full">
       <div class="relative max-w-xl z-50 flex flex-col gap-7 text-white justify-center h-full px-5">
         <h1 class="text-5xl font-light">Sinta uma nova realidade</h1>

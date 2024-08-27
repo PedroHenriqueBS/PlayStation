@@ -90,25 +90,24 @@ export class HomeComponent implements OnInit{
     },
   ];
 
-  // CONTAINER SWIPER ACCESSORIES
-  configSwiperAccessories() {
+  // CONTAINER SWIPER HEADER THUMB
+  configSwiperHeaderThumb() {
     const swiperElementConstructor2 = document.querySelector('.swiper2');
     const swiperOptions2: SwiperOptions = {
      slidesPerView: 5,
      breakpoints: {
       0: {
-        slidesPerView: 1,
+        slidesPerView: 1.2,
       }, 400: {
-        slidesPerView: 2,
+        slidesPerView: 2.2,
       }, 530: {
-        slidesPerView: 3,
+        slidesPerView: 3.2,
       }, 800: {
-        slidesPerView: 4,
+        slidesPerView: 4.2,
       }, 965: {
         slidesPerView: 5
       }
      }
-
     };
 
     Object.assign(swiperElementConstructor2!, swiperOptions2);
@@ -121,7 +120,7 @@ export class HomeComponent implements OnInit{
     const swiperElementConstructor = document.querySelector('.swiperPlus');
     const swiperOptions: SwiperOptions = {
       slidesPerView: 2,
-      navigation: true,
+      navigation:true,
       pagination: {
         enabled: true,
         clickable: true,
@@ -131,6 +130,14 @@ export class HomeComponent implements OnInit{
       initialSlide: 1,
       centeredSlides:true,
       spaceBetween: 20,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        500: {
+          slidesPerView: 2,
+        }
+      },
       injectStyles: [
         `
           .swiper-button-next {
@@ -469,7 +476,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.configSwiperHeader();
-    this.configSwiperAccessories();
+    this.configSwiperHeaderThumb();
     this.configSwiperPlus();
     this.configSwiperUpdate();
     this.configSwiperStore();

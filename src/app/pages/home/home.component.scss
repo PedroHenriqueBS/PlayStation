@@ -34,7 +34,7 @@
 
 .swiper2 {
   margin: auto;
-  padding: 0 20px;
+  padding:0 10px;
 
   swiper-slide {
     cursor: pointer;
@@ -164,6 +164,12 @@
     swiper-slide{ .title { width: 230px !important; } }
   }
 
+}
+
+@media (max-width: 500px) {
+  .swiperPlus{
+    padding: 0 20px;
+  }
 }
 
 @media (min-width: 400px) {
