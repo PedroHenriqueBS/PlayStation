@@ -89,6 +89,19 @@ export class AccessoriesComponent implements OnInit{
             background-color: var(--btn-blue-hover);
           }
 
+          @media (max-width: 650px){
+            .swiper-button-prev,
+            .swiper-button-prev:hover,
+            .swiper-button-next,
+            .swiper-button-next:hover{
+              background: transparent;
+            }
+
+            .swiper-button-next svg, .swiper-button-prev svg {
+            color: transparent;
+            }
+          }
+
         `,
       ],
     };
