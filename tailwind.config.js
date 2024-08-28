@@ -59,6 +59,9 @@ module.exports = {
         'listGamingMobile': 'repeat(2, minmax(0, 192px))',
         'listGamingMiniMobile': 'repeat(1, minmax(0, 250px))',
       },
+      gridTemplateRows:{
+        'layout': '150px  1fr'
+      },
       backgroundImage: {
         'backgroundVR': "url('../public/assets/VR/backgroundVR.webp')",
         'backgroundVR-mobile': "url('../public/assets/VR/VR-mobile.webp')",
