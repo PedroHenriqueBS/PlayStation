@@ -61,7 +61,7 @@
         <!-- NOVOS LANÇAMENTOS -->
         @if(button == 1) {
           @for(item of gamesList; track item){
-              <div class="w-full h-48 cursor-pointer gamesBox">
+              <div class="w-full h-48 cursor-pointer gamesBox max-[400px]:h-60">
                 <img [src]="item.img" class="object-cover object-top w-full h-full rounded-xl img">
                 <p class="text-white pt-2 text-sm"> {{ item.name }}</p>
               </div>
@@ -69,7 +69,7 @@
           <!-- EM BREVE-->
         } @else if (button == 2) {
           @for(item of gamesList; track item){
-            <div class="w-full h-48 cursor-pointer gamesBox">
+            <div class="w-full h-48 cursor-pointer gamesBox max-[400px]:h-60">
               <img [src]="item.imgEmbreve" class="object-cover object-top w-full h-full rounded-xl img">
               <p class="text-white pt-2 text-sm"> {{ item.nameEmbreve }}</p>
             </div>
@@ -139,14 +139,15 @@
 
 <!-- VR -->
 @defer(on viewport){
-  <section class="relative z-10 bg-backgroundVR bg-cover h-heightVR">
-    <div class="max-w-7xl m-auto flex items-center h-full">
-      <div class="relative max-w-xl z-50 flex flex-col gap-7 text-white justify-center h-full px-5">
-        <h1 class="text-5xl font-light">Sinta uma nova realidade</h1>
-        <p class="font-light">Mergulhe em mundos incríveis que vão além da realidade com o inovador  headset PlayStation VR2 e o controle PlayStation VR2 Sense.</p>
+  <section class="relative z-10 bg-backgroundVR bg-cover bg-right-top h-heightVR max-[800px]:bg-backgroundVR-mobile">
+    <div class="max-w-7xl m-auto flex h-full max-[800px]:justify-center">
+      <div class="relative max-w-xl z-50 flex flex-col gap-7 text-white justify-center h-full px-5 max-[800px]:items-center max-[800px]:justify-end max-[800px]:pb-10 ">
+        <h1 class="text-5xl font-light max-[800px]:text-center max-[800px]:text-4xl">Sinta uma nova realidade</h1>
+        <p class="font-light max-[800px]:text-center">Mergulhe em mundos incríveis que vão além da realidade com o inovador  headset PlayStation VR2 e o controle PlayStation VR2 Sense.</p>
         <btn-white class="flex" textButton="Saiba mais"/>
       </div>
     </div>
+    <div class="absolute w-full h-full z-20 top-0 linearGradient"></div>
   </section>
 } @placeholder {
   <p>Loading...</p>
@@ -157,20 +158,20 @@
 }
 
 <!-- DATE NEW-->
-<section class="w-full h-heightUpdate bg-backgroundDate bg-cover border-t">
+<section class="w-full h-heightUpdate bg-backgroundDate bg-cover bg-right-top border-t max-[800px]:bg-backgroundDate-mobile max-[800px]:h-heightPlus">
   <div class="max-w-screen-xl m-auto h-full">
-    <div class="flex flex-col justify-center h-full gap-5 px-5">
+    <div class="flex flex-col justify-center h-full gap-5 px-5 max-[800px]:justify-end max-[800px]:pb-20">
       <h1 class="text-white text-5xl font-light">EM AGOSTO <br>
         NO PLAYSTATION</h1>
       <p class="text-borderPlus">Confira os maiores lançamentos deste mês, além de recursos exclusivos, guias <br> e muito mais.</p>
     </div>
   </div>
 </section>
-<section class="w-full bg-purple h-heightUpdate2 flex flex-col justify-center items-center">
-  <swiper-container init="false" class="swiper-update mx-16 max-w-screen-2xl m-auto">
+<section class="w-full h-full bg-purple flex flex-col justify-start items-center">
+  <swiper-container class="swiper-update mx-16 max-w-screen-2xl m-auto max-[800px]:w-full">
     @for(item of slidesUpdate; track item){
-      <swiper-slides class="w-full p-4 rounded-2xl flex flex-col gap-5 mx-1 my-5 text-white duration-300 border-4 border-transparent hover:bg-boxUpdate hover:border-borderUpdate hover:-translate-y-2 cursor-pointer">
-        <img [src]="item.img" alt=""  class="rounded-2xl">
+      <swiper-slides class="w-full p-4 rounded-2xl flex flex-col gap-5 mx-1 my-2 text-white duration-300 border-4 border-transparent hover:bg-boxUpdate hover:border-borderUpdate hover:-translate-y-2 cursor-pointer">
+        <img [src]="item.img" alt="imagens de jogos"  class="rounded-2xl">
         <div class="flex flex-col gap-3 pb-5">
           <h1 class="text-xl">{{ item.title }}</h1>
           <span class="text-sm">{{ item.description }}</span>
@@ -183,7 +184,7 @@
 
  <!-- STORE -->
 <section class="w-full bg-white">
-  <div class="max-w-screen-2xl m-auto px-5 flex items-center justify-center gap-10 h-heightUpdate2">
+  <div class="max-w-screen-2xl m-auto px-5 flex items-center justify-center gap-10 h-full max-[800px]:flex-col mt-10">
     <div class="max-w-96 flex flex-col gap-5">
       <img src="assets/logos/store.png" alt="logo playstation store" width="300">
       <h1 class="text-4xl font-light">Novas promoções na PlayStation™Store</h1>
@@ -195,17 +196,17 @@
     </div>
   </div>
 
-  <h1 class="mx-5 my-10 text-center text-4xl font-light">As novidades do PlayStation Blog</h1>
+  <h1 class="mx-5 my-10 text-center text-4xl font-light max-[800px]:text-2xl">As novidades do PlayStation Blog</h1>
   <swiper-container init="false" class="swiper-store m-auto relative w-full h-full">
     @for(item of listStore; track item) {
-      <swiper-slide class="flex flex-col justify-between rounded-2xl shadow-lg p-5 mt-5 h-heightUpdate2 duration-1000 hover:shadow-2xl cursor-pointer">
+      <swiper-slide class="flex w-full flex-col justify-between rounded-2xl shadow-lg p-5 mt-5 h-heightStore duration-1000 hover:shadow-2xl cursor-pointer">
         <div class="flex flex-col gap-4">
-          <img [src]="item.img" alt="" class="rounded-2xl imgStore">
+          <img [src]="item.img" alt="capa do comentário" class="rounded-2xl imgStore">
           <h1 class="text-xl font-light"> {{ item.title }}</h1>
           <p class="text-sm text-gray"> {{ item.description }}</p>
         </div>
         <div class="flex gap-3">
-          <img [src]="item.miniaturaImg" alt="" width="50" class="rounded-md">
+          <img [src]="item.miniaturaImg" alt="perfil do comentário" width="60" class="rounded-md">
           <div class="flex flex-col gap-0.5">
             <span class="text-xs font-bold">{{ item.name }}</span>
             <span class="text-xs">{{ item.location }}</span>
@@ -219,11 +220,11 @@
 
 <!-- REDES SOCIAIS -->
 @defer(on viewport){
-  <section class="w-full bg-social h-96 mt-14">
+  <section class="w-full h-full bg-social  mt-14 py-20">
     <div class="max-w-screen-xl m-auto h-full flex justify-center items-center">
       <div class="flex flex-col items-center gap-16">
-        <h1 class="text-4xl font-light">Siga-nos nas redes sociais</h1>
-        <div class="flex gap-8">
+        <h1 class="text-4xl px-3 font-light max-[650px]:text-center">Siga-nos nas redes sociais</h1>
+        <div class="flex gap-8 max-[650px]:flex-col">
           <img src="assets/redes-sociais/twitter.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
           <img src="assets/redes-sociais/facebook.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
           <img src="assets/redes-sociais/instagram.webp" alt="" width="120" class="cursor-pointer duration-300 hover:scale-102">
@@ -242,11 +243,13 @@
 
  <!-- FOOTER -->
  @defer(on viewport){
-  <footer class="w-full bg-footer h-80">
-    <div class="max-w-screen-2xl m-auto pt-6">
-      <img src="assets/logos/footer.png" alt="" width="120">
+  <footer class="w-full bg-footer h-full ">
+    <div class="max-w-screen-2xl m-auto py-6 flex flex-col ">
+      <div class="w-full flex max-[615px]:justify-center px-3">
+        <img src="assets/logos/footer.png" alt="" width="120">
+      </div>
       <hr class="my-6 text-btnBlue">
-      <div class="text-center text-white">
+      <div class="text-center text-white px-3">
         <h1 class="text-lg">Site desenvolvido por <a href="https://github.com/PedroHenriqueBS" target="_blank" class="text-textDeluxe">Pedro Henrique</a> com base no modelo do site da PlayStation.</h1>
         <span class="text-lg">Para ver mais projetos acesse meu GitHub:</span><br>
         <a href="https://github.com/PedroHenriqueBS?tab=repositories" target="_blank" class="text-textDeluxe">https://github.com/PedroHenriqueBS?tab=repositories</a>

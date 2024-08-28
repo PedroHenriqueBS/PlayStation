@@ -51,16 +51,19 @@ module.exports = {
         widthAccessories: '500px',
         widtContainerSwiper: '1850px',
         heightPlus: '820px',
+        heightStore: '650px',
       },
       gridTemplateColumns: {
         'listGaming': 'repeat(6, minmax(0, 192px))',
         'listGamingTablet': 'repeat(4, minmax(0, 192px))',
         'listGamingMobile': 'repeat(2, minmax(0, 192px))',
-        'listGamingMiniMobile': 'repeat(1, minmax(0, 200px))',
+        'listGamingMiniMobile': 'repeat(1, minmax(0, 250px))',
       },
       backgroundImage: {
         'backgroundVR': "url('../public/assets/VR/backgroundVR.webp')",
+        'backgroundVR-mobile': "url('../public/assets/VR/VR-mobile.webp')",
         'backgroundDate': "url('../public/assets/sectiondata.webp')",
+        'backgroundDate-mobile': "url('../public/assets/date-mobile.webp')",
       },
       scale: {
         '102': '1.02',

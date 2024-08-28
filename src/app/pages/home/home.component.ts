@@ -193,7 +193,8 @@ export class HomeComponent implements OnInit{
   configSwiperUpdate(){
     const swiperElementConstructor = document.querySelector('.swiper-update');
     const swiperOptions: SwiperOptions = {
-      slidesPerView: 3,
+      slidesPerView: 1,
+      navigation:true,
     };
 
     Object.assign(swiperElementConstructor!, swiperOptions);
@@ -217,6 +218,17 @@ export class HomeComponent implements OnInit{
       initialSlide: 2,
       speed: 500,
       grabCursor: true,
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2
+        },
+        800: {
+          slidesPerView: 2.2
+        },
+        1155: {
+          slidesPerView: 3.5,
+        }
+      },
       injectStyles: [
         `
           .swiper-button-next {
