@@ -143,6 +143,8 @@
   swiper-slide {
     transition: .3s;
     .imgStore {
+      width: 100%;
+      height: 100%;
       box-shadow: 1px 3px 10px rgb(57, 57, 57);
       transition: .2s;
       &:hover { box-shadow: 1px 3px 20px rgb(57, 57, 57);}
@@ -178,7 +180,13 @@
     background-image: linear-gradient(to top, black, rgba(255, 255, 255, 0));
   }
   .swiper-update{
-    swiper-slides{ width: 90% !important; }
+    swiper-slides{
+      width: 90% !important;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   .swiper-update::part(wrapper) {
     flex-direction: column;
