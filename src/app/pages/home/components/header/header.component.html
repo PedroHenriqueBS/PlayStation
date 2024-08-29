@@ -3,30 +3,30 @@
   <!-- NAVIGATION -->
   <button class="hidden max-md:block" (click)="isOpen()">
     @if(menuOpen){
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" aria-label="mobile closed">
         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
       </svg>
     } @else {
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-list" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-list" viewBox="0 0 16 16" aria-label="mobile open">
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
       </svg>
     }
   </button>
   <div class="flex">
-    <img src="assets/logos/logoPlay.webp" width="50" class="mr-3">
+    <img src="assets/logos/logoPlay.webp" width="50" height="50" class="mr-3" alt="logo playstation">
     @if (menuOpen){
       <ul class="flex justify-center z-50 drop">
         @for(item of menuDrowDown; track item){
           <li class="flex justify-center items-center w-auto p-2 cursor-pointer text-black mr-3 duration-1000 max-xl:mr-0 max-xl:text-sm max-xl:pl-0"  (click)="activeMenu(item.id)" (click)="toggleRotate(item.id)">
-            <span class="hover:text-btnBlueHover">{{item.name}}</span>
-            <span class="arrow" [ngClass]="{'rotate': isActive(item.id)}"><img src="assets/arrow-down.png" alt="oi" width="20" id="flecha"></span>
+            <span class="hover:text-btnBlueHover pr-2">{{item.name}}</span>
+            <span class="arrow" [ngClass]="{'rotate': isActive(item.id)}"><img src="assets/arrow-down.png" alt="oi" width="10" height="10" id="flecha"></span>
 
             @if(item.id === openObjectId){
               <div class="flex absolute top-16 w-full pt-4 left-0 items-center justify-center flex-col bg-white pb-4 max-md:hidden">
                   <div class="flex">
                     @for(item of item.img; track item){
                       <div class="hover:shadow-boxHeader px-12 pt-2 pb-14 flex mr-5">
-                        <img [src]="item" class="" width="70">
+                        <img [src]="item" width="70" height="70">
                       </div>
                     }
                   </div>
@@ -57,10 +57,10 @@
 
   <!-- SESSION LOGIN AND SEARCH-->
   <div class="flex items-center justify-center gap-4">
-    <a routerLink="login"><button class="bg-btnBlue text-white hover:bg-btnBlueHover rounded-3xl px-3 font-semibold tracking-wider max-lg:text-sm max-lg:px-2">Iniciar sessão</button></a>
+    <a routerLink="login"><button class="bg-btnBlue text-white hover:bg-btnBlueHover rounded-3xl px-4 font-semibold tracking-wider max-lg:text-sm max-lg:px-2 py-0.5">Iniciar sessão</button></a>
     <div class="flex border p-2 border-btnWhiteHover hover:border-black search max-lg:hidden">
       <input type="text" class="outline-0 w-32 cursor-pointer placeholder:text-gray-700 " placeholder="Pesquisar">
-      <img src="assets/lupa.png" width="24">
+      <img src="assets/lupa.png" width="24" height="24" alt="search">
     </div>
   </div>
 </header>

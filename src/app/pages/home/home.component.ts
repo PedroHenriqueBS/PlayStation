@@ -50,8 +50,8 @@ export class HomeComponent implements OnInit{
   }
   public slideSwiper: SlideSwiper[] = [
     {
-      imgFundo: 'assets/slides/nba.jpg',
-      imgMiniatura: 'assets/slides/miniaturas/nba.jpg',
+      imgFundo: 'assets/slides/nba.webp',
+      imgMiniatura: 'assets/slides/miniaturas/nba.webp',
       imgTitle: 'assets/slides/logo/nba.png',
       title: 'Jogue onde estiver, ganhe em todo lugar',
       subTitle: 'Acumule vitórias, desbloqueie banners e faça história no NBA 2k25. Em breve no PS4 e PS5.',
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit{
     },
     {
       imgFundo: 'assets/slides/fifa.webp',
-      imgMiniatura: 'assets/slides/miniaturas/fifa.png',
+      imgMiniatura: 'assets/slides/miniaturas/fifa.webp',
       imgTitle: 'assets/slides/logo/logofifa.webp',
       title: 'Pelo clube',
       subTitle: 'Tenha mais controle tático do que nunca com o FC IQ e junte-se a seus amigos em novos modos de jogo, disponível em breve no PS5 e PS4',
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit{
     },
     {
       imgFundo: 'assets/slides/astrof.webp',
-      imgMiniatura: 'assets/slides/miniaturas/astro.png',
+      imgMiniatura: 'assets/slides/miniaturas/astro.webp',
       imgTitle: 'assets/slides/logo/astrobot.png',
       subTitle: 'Entre em uma nova aventura tamanho gigante espalhada por 50 mundos variados e empolgantes com ASTRO.',
       button: 'Jogar a versão beta',
@@ -274,6 +274,7 @@ export class HomeComponent implements OnInit{
           .swiper-pagination {
             position: relative;
             margin-top: 20px;
+            margin-bottom: 50px;
           }
 
           .swiper-pagination-bullet {
