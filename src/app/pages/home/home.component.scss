@@ -139,6 +139,15 @@
   }
 }
 
+.swiper-update{
+  swiper-slides{
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 .swiper-store {
   swiper-slide {
     transition: .3s;
@@ -155,10 +164,7 @@
 
 @media (max-width: 980px){
   .swiper2 {
-    swiper-slide {
-      width: 150px;
-      height: 80px;
-    }
+    swiper-slide { width: 150px; height: 80px; }
   }
 }
 
@@ -180,13 +186,7 @@
     background-image: linear-gradient(to top, black, rgba(255, 255, 255, 0));
   }
   .swiper-update{
-    swiper-slides{
-      width: 90% !important;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
+    swiper-slides{ width: 90% !important; }
   }
   .swiper-update::part(wrapper) {
     flex-direction: column;
