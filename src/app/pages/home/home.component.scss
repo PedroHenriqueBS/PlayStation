@@ -196,7 +196,14 @@
 }
 
 @media (max-width: 500px) {
-  .swiperPlus{ padding: 0 20px; }
+  .swiperPlus{ padding: 0 20px;
+    swiper-slide {
+      &:hover {
+        box-shadow: 0 0 0;
+        transform: scale(1);
+      }
+    }
+  }
 }
 
 @media (min-width: 400px) {
